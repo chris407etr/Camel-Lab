@@ -1,0 +1,26 @@
+<beans
+   xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+     http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+
+        <route>
+            <description>My Awesome Camel Demo</description>
+            <from uri="timer:myTimer?fixedRate=true&amp;period=10000"/>
+           
+            <!-- demo logic goes here -->
+			<setHeader headerName="TestHeader">
+				<constant>test header constant value</constant>
+			</setHeader>
+			<setProperty propertyName="TestProperty">
+				<constant>test property, FakeProperty=constant value</constant>
+			</setProperty>
+			<to uri="log:myLog?level=INFO&amp;showHeaders=true&amp;showProperties=true"/>
+
+        </route>
+    </camelContext>
+
+</beans>
