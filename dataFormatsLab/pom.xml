@@ -17,8 +17,7 @@
 				<configuration>
 					<instructions>
 						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>*</Import-Package>
-                        <Export-Package />
+                        <Export-Package>com.etr407.dataformats</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
