@@ -1,0 +1,13 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
+		<route>
+			<from uri="file:C:\407\?fileName=data.csv" />
+			<split>
+				<tokenize token="\n"/>
+				<to uri="log:splitLog?level=INFO&amp;showHeaders=true&amp;showProperties=true" />
+			</split>
+		</route>
+
+	</camelContext>
+</blueprint>
